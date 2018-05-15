@@ -1,8 +1,8 @@
 all: clean build run
 
 clean:
-	rm --force --recursive data
-	rm --force --recursive bin
+	rm --rf data
+	rm --rf bin
 
 build: # compile to binary (if you use interpreter, then do not implement it)
 	pip3 install -r requirements.txt

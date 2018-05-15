@@ -1,0 +1,20 @@
+{
+    "username" : "Rapierz",
+    "password" : "yV4hOfqtocjg",
+    "use_proxy" : true,
+    "proxy" : "http://yukinotenshi:21617153@cache.itb.ac.id:8080",
+    "filename" : "data2.json",
+    "search_config" :
+    {
+        "dropbear" :
+        {
+            "limit" : 2000,
+            "start_from" : 0
+        },
+        "keyword2" :
+        {
+            "limit" : 100,
+            "start_from" : 1
+        }
+    }
+}

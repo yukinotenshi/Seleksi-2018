@@ -1,7 +1,11 @@
 all: clean build run
 
-clean: # remove data and binary folder
+clean:
+	rm --force --recursive data
+	rm --force --recursive bin
 
 build: # compile to binary (if you use interpreter, then do not implement it)
+	pip3 install -r requirements.txt
 
-run: # run your binary
+run: 
+	python3 src/scraper.py

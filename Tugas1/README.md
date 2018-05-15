@@ -1,19 +1,8 @@
-<h1 align="center">
-  <br>
-  Tugas 1 Seleksi Warga Basdat 2018
-  <br>
-  <br>
-</h1>
+# Shodan.io Scraper
 
-<h2 align="center">
-  <br>
-  Data Scraping
-  <br>
-  <br>
-</h2>
+A simple scraper made with Python 3. This scraper is able to collect data of various services available from hosts according to your search keyword. Maximum result limit is 2000 as shodan only allows free user to view 200 page at most.
 
-
-### Specifications
+### Specification
 
 1. Lakukan data scraping dari sebuah laman web untuk memeroleh data atau informasi tertentu __TANPA MENGGUNAKAN API__
 
@@ -25,16 +14,16 @@
 
 5. Peserta juga diminta untuk membuat Makefile sesuai template yang disediakan, sehingga program dengan gampang di-_build_, di-_run_, dan di-_clean_
 
-``` Makefile
-all: clean build run
+    ``` Makefile
+    all: clean build run
 
-clean: # remove data and binary folder
+    clean: # remove data and binary folder
 
-build: # compile to binary (if you use interpreter, then do not implement it)
+    build: # compile to binary (if you use interpreter, then do not implement it)
 
-run: # run your binary
+    run: # run your binary
 
-```
+    ```
 
 6. Deadline pengumpulan tugas adalah __15 Mei 2018 Pukul 23.59__
 
@@ -49,35 +38,76 @@ run: # run your binary
 11. Tambahkan juga gitignore pada file atau folder yang tidak perlu di upload, __NB : BINARY TIDAK DIUPLOAD__
 
 12. JSON harus dinormalisasi dan harus di-_preprocessing_
-```
-Preprocessing contohnya :
-- Cleaning
-- Parsing
-- Transformation
-- dan lainnya
-```
+    ```
+    Preprocessing contohnya :
+    - Cleaning
+    - Parsing
+    - Transformation
+    - dan lainnya
+    ```
 
 13. Berikan README yang __WELL DOCUMENTED__ dengan cara __override__ file README.md ini. README harus memuat minimal konten :
-```
-- Description
-- Specification
-- How to use
-- JSON Structure
-- Screenshot program (di-upload pada folder screenshots, di-upload file image nya, dan ditampilkan di dalam README)
-- Reference (Library used, etc)
-- Author
-```
+    ```
+    - Description
+    - Specification
+    - How to use
+    - JSON Structure
+    - Screenshot program (di-upload pada folder screenshots, di-upload file image nya, dan ditampilkan di dalam README)
+    - Reference (Library used, etc)
+    - Author
+    ```
+### Usage
+1. Configure config file (config.txt)
+    ```{
+        "username" : "username",
+        "password" : "secret",
+        "use_proxy" : true,
+        "proxy" : "http://username:password@host:port",
+        "filename" : "data.json",
+        "search_config" :
+        {
+            "keyword1" :
+            {
+                "limit" : 2000,
+                "start_from" : 0
+            },
+            "keyword2" :
+            {
+                "limit" : 100,
+                "start_from" : 1
+            }
+        }
+    }
+2. run ```make build``` to install dependency (first time only)
+3. run ```make run``` to start the scraper
 
-<h1 align="center">
-  <br>
-  Selamat BerEksplorasi!
-  <br>
-  <br>
-</h1>
+### Result
+* The result will be saved to ```data.json``` and ```autosave-keyword.json``` with the following format :
+    ```javascript
+    {
+    "city": CITY,
+    "country": COUNTRY,
+    "host": IPv4/IPv6,
+    "organization": ORGANIZATION_NAME,
+    "services":
+    [
+      {
+        "detail": SERVICE_HEADER,
+        "name": (ssh, http, etc),
+        "port": PORT_NUMBER,
+        "protocol": tcp/udp
+      },
+      ...
+    ]
 
-<p align="center">
-  <br>
-  Basdat Industries - Lab Basdat 2018
-  <br>
-  <br>
-</p>
+### Screenshot
+![](screenshot/ss1.jpg?raw=true)
+
+### Reference
+* Library used :
+    * Requests (http://docs.python-requests.org/en/master/)
+    * BeautifulSoup (https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+### Author
+* Name : Gabriel Bentara Raphael
+* Contact : gabriel.bentara@gmail.com

@@ -101,7 +101,7 @@ A simple scraper made with Python 3. This scraper is able to collect data of var
     ]
 
 ### Screenshot
-![](screenshot/ss1.jpg?raw=true)
+![](screenshots/ss1.jpg?raw=true)
 
 ### Reference
 * Library used :

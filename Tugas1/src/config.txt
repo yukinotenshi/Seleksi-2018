@@ -1,8 +1,8 @@
 {
-    "username" : "Rapierz",
-    "password" : "yV4hOfqtocjg",
+    "username" : "asdfasdf",
+    "password" : "asdfadsfasdf",
     "use_proxy" : true,
-    "proxy" : "http://yukinotenshi:21617153@cache.itb.ac.id:8080",
+    "proxy" : "http://user:pass@host:port",
     "filename" : "data2.json",
     "search_config" :
     {
